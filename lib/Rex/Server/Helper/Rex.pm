@@ -12,6 +12,9 @@ use warnings;
 
 use Rex -feature => '0.42';
 use Rex::Transaction;
+use Rex::Commands::Cron;
+use Rex::Commands::Kernel;
+
 
 my $cached_connections = {};
 
@@ -19,8 +22,7 @@ my $cached_connections = {};
 
 =item run_command($command, $options)
 
- run_command({
-    command => "run",
+ run_command( "foo", {
     args    => [$first, $second, ...],
     server  => "servername",
     user     => "user",

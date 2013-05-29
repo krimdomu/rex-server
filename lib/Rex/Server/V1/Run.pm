@@ -7,6 +7,7 @@
 package Rex::Server::V1::Run;
 use Mojo::Base 'Mojolicious::Controller';
 use Rex::Server::Helper::Rex;
+use Data::Dumper;
 
 sub run {
    my $self = shift;
