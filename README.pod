@@ -1,0 +1,11 @@
+=pod
+
+=head1 NAME
+
+Rex::Server
+
+=head1 DESCRIPTION
+
+Rex::Server is an API server exposing Rex functions over a HTTP/JSON interface so that it is possible for other languages to use Rex.
+
+
