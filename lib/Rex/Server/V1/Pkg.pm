@@ -12,7 +12,7 @@ sub install {
    my $self = shift;
    my $json = $self->req->json;
 
-   unshift @{ $json->{args} }, "package";
+   unshift @{ $json->{args} }, "package", $self->param("package");
    my $ret = Rex::Server::Helper::Rex->run_command("install", $json);
 
    return $self->render(json => {ok => Mojo::JSON->true, return => $ret});
@@ -22,7 +22,7 @@ sub remove {
    my $self = shift;
    my $json = $self->req->json;
 
-   unshift @{ $json->{args} }, "package";
+   unshift @{ $json->{args} }, "package", $self->param("package");
    my $ret = Rex::Server::Helper::Rex->run_command("remove", $json);
 
    return $self->render(json => {ok => Mojo::JSON->true, return => $ret});

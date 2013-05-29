@@ -14,6 +14,7 @@ use Rex -feature => '0.42';
 use Rex::Transaction;
 use Rex::Commands::Cron;
 use Rex::Commands::Kernel;
+use Data::Dumper;
 
 
 my $cached_connections = {};
@@ -55,6 +56,8 @@ no strict 'refs';
 
       $cached_connections->{$options->{server} . "-" . $options->{user}} = $conn;
    }
+
+   print STDERR Dumper($options->{args});
    
    return &$command(@{ $options->{args} });
 }
